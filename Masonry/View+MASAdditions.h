@@ -73,7 +73,7 @@
  *	@return	returns nil if common superview could not be found
  */
 - (instancetype)mas_closestCommonSuperview:(MAS_VIEW *)view;
-
+NS_ASSUME_NONNULL_BEGIN
 /**
  *  Creates a MASConstraintMaker with the callee view.
  *  Any constraints defined are added to the view or the appropriate superview once the block has finished executing
@@ -82,7 +82,7 @@
  *
  *  @return Array of created MASConstraints
  */
-- (NSArray *)mas_makeConstraints:(void(NS_NOESCAPE ^)(MASConstraintMaker *make))block;
+- (NSArray *)mas_makeConstraints:(void(NS_NOESCAPE ^ )(MASConstraintMaker *  make))block;
 
 /**
  *  Creates a MASConstraintMaker with the callee view.
@@ -93,7 +93,7 @@
  *
  *  @return Array of created/updated MASConstraints
  */
-- (NSArray *)mas_updateConstraints:(void(NS_NOESCAPE ^)(MASConstraintMaker *make))block;
+- (NSArray *)mas_updateConstraints:(void(NS_NOESCAPE ^)(MASConstraintMaker * make))block;
 
 /**
  *  Creates a MASConstraintMaker with the callee view.
@@ -104,6 +104,6 @@
  *
  *  @return Array of created/updated MASConstraints
  */
-- (NSArray *)mas_remakeConstraints:(void(NS_NOESCAPE ^)(MASConstraintMaker *make))block;
-
+- (NSArray *)mas_remakeConstraints:(void(NS_NOESCAPE ^)(MASConstraintMaker * make))block;
+NS_ASSUME_NONNULL_END
 @end
